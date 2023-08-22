@@ -47,7 +47,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // Use cors middleware and specify your Netlify domain in the options
-app.use(
+app.use('*',
   cors({
     origin: 'https://main--inspiring-melomakarona-2f0a2a.netlify.app',
   })
