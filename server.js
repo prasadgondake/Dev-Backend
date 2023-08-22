@@ -50,7 +50,7 @@ app.use(express.json({ extended: false }));
 app.use(
   '*',
   cors({
-    origin: 'https://your-domain.com', // Replace with your domain
+    origin: 'https://main--inspiring-melomakarona-2f0a2a.netlify.app/', // Replace with your domain
   })
 );
 
