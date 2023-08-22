@@ -47,12 +47,12 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // Use cors middleware and specify your domain in the options
-app.use(
-  '*',
-  cors({
-    origin: 'https://dev-backend-u1s9.onrender.com', // Replace with your domain
-  })
-);
+// app.use(
+//   '*',
+//   cors({
+//     origin: 'https://dev-backend-u1s9.onrender.com', // Replace with your domain
+//   })
+// );
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
@@ -66,9 +66,14 @@ if (process.env.NODE_ENV === 'production') {
 
   app.get('*', (req, res) => {
     res.sendFile(
-      path.resolve(__dirname, 'client', 'build', 'index.html')
+      path.resolve(__dirname, 'client', 'build', 'index.html'),
+      {
+        headers: {
+          'Access-Control-Allow-Origin': 'https://main--inspiring-melomakarona-2f0a2a.netlify.app'
+        }
+      }
     );
-  });
+  });  
 }
 
 const PORT = process.env.PORT || 5000;
