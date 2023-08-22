@@ -69,7 +69,7 @@ if (process.env.NODE_ENV === 'production') {
       path.resolve(__dirname, 'client', 'build', 'index.html'),
       {
         headers: {
-          'Access-Control-Allow-Origin': 'https://main--inspiring-melomakarona-2f0a2a.netlify.app'
+          'Access-Control-Allow-Origin': 'https://devconnecter910.netlify.app'
         }
       }
     );
